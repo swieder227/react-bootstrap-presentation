@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>React Bootstrap Presentation</title>
+
+		<meta name="description" content="An HTML slide-show to present my react-bootstrap scaffold">
+		<meta name="author" content="Seth Wieder">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- custom styles -->
+		<link rel="stylesheet" href="css/custom_styles.css">
+
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+				<!-- Start Sections -->
+				<section>
+					<h1>React Bootstrap</h1>
+					<h3>A scaffold for <span class="color--orange">HTML</span> + <span class="color--blue">ReactJS</span><br/>Isomorphic Single-Page Applications</h3>
+				</section>
+				<section>
+					<section>
+						<h3>React: A javascript script library for building user interfaces</h3>
+						<p><a href="https://facebook.github.io/react/" target="_blank">Open Source and written by Facebook</a></p>
+					</section>
+					<section>
+						<h3>Component-based</h3>
+						<img src="lib/img/demo-components.jpg" height="813" width="937" alt="">
+					</section>
+					<section>
+						<h3>Just the UI</h3>
+						<p class="fragment">"React is the V in MVC"</p>
+						<p class="fragment">Unopinionated.</p>
+						<p class="fragment">It's easy to sprinkle in React Components into your technology stack or existing applicaiton.</p>
+					</section>
+					<section>
+						<h3>Virtual DOM</h3>
+						<p class="fragment">React will map the DOM to a javascript object.</p>
+						<p class="fragment">When state changes, it will compute diffs in js, and only update parts of the DOM that require re-render.</p>
+						<img class="fragment" data-src="lib/img/angular-react.gif" height="338" width="600">
+					</section>
+					<section>
+						<h3>What about AngularJS?</h3>
+						<p class="fragment"><small><em>Doing things "The Angular Way"</em></small></p>
+						<p class="fragment">If React is a fast car...</p>
+						<p class="fragment">...then Angular is a fast car, <span class="fragment">with a different engine,</span> <span class="fragment">that can drive to the grocery store or go off-roading.</span> <span class="fragment">It also would require seatbelts and helmets,</span> <span class="fragment">and months of driving school.</span></p>
+						<hr class="fragment">
+						<p class="fragment">React does one thing and it does it well</p>
+						<p class="fragment">Angular is a much more robust and opinionated MVC</p>
+					</section>
+				</section>
+				
+				<!--section>
+					<h3>React "Hello, World" Component</h3>
+					<pre><code class="hljs">
+var HelloMessage = React.createClass({
+  render: function() {
+    return <div>Hello {this.props.name}</div>;
+  }
+});
+
+ReactDOM.render(<HelloMessage name="John"></HelloMessage>, mountNode);
+					</code></pre>
+				</section-->
+				<section>
+					<section>
+						<h3>ES6 Components</h3>
+						<p class="fragment"><small><em>Yay for new javascripts!</em></small></p>
+						<p class="fragment">Start learning the new features that can make it easier and more fun than ever to write js.</p>
+						<p class="fragment"><a href="http://babeljs.io/blog/2015/06/07/react-on-es6-plus/" target="_blank">Guide for React on ES6+</a></p>
+					</section>
+					<section>
+						<h3>Import Modules</h3>
+						<p><small><em>Easily re-use functionality across files</em></small></p>
+						<h5>ES5 Way:</h5>
+						<pre><code class="hljs">
+/* Requires Node or CommonJS */
+var React = require('react');
+var Router = require('react-router').Router;
+var Route = require('react-router').Route;
+var IndexLink = require('react-router').IndexLink;</code></pre>
+						<h5>ES6 Way:</h5>
+						<pre><code class="hljs">
+/* ES6 Standard */						
+import React from 'react';
+import {Router, Route, IndexLink} from 'react-router';
+						</code></pre>
+					</section>
+					<section>
+						<h3>Class Definition Syntax</h3>
+						<p><small><em>JS Classes with inheritance and clean syntax</em></small></p>
+						<h5>ES5 Way:</h5>
+						<pre><code class="hljs">
+var Photo = React.createClass({
+  handleDoubleTap: function(e) { … },
+  render: function() { … },
+});							
+
+modules.export.Photo = Photo;
+						</code></pre>
+						<h5>ES6 Way:</h5>
+						<pre><code class="hljs">
+export default class Photo extends React.Component {
+  handleDoubleTap(e) { … }
+  render() { … }
+}
+						</code></pre>
+					</section>
+					<section>
+						<h3>Fat Arrow Functions</h3>
+						<p><small><em>no more that = this; <strong>*the crowd goes wild*</strong></em></small></p>
+						<h5>ES5 Way:</h5>
+						<pre><code class="hljs">
+this.update().bind(this,state);
+						</code></pre>
+						<pre><code class="hljs">
+update : function(state){
+	this…
+},
+						</code></pre>
+						<h5>ES6 Way:</h5>
+						<pre><code class="hljs">
+this.update(state);
+						</code></pre>
+						<pre><code class="hljs">
+update = (state) => {
+	this…
+}
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<h3>Flux / Alt</h3>
+					<p class="fragment"><small><em>Separation of concerns</em></small></p>
+					<p class="fragment"><a href="https://facebook.github.io/flux/docs/overview.html" target="_blank">Flux</a> is an software paradigm by Facebook to reduce complexity and improve separation of concerns.</p>
+					<p class="fragment"><a href="http://alt.js.org/" target="_blank">Alt</a> is a well-documented library that implements the Flux methodology, with a simplified interface.</p>
+				</section>
+				<section>
+					<h3>React-Router</h3>
+					<p class="fragment"><small><em>Nav states and URLs, Oh my!</em></small></p>
+					<p class="fragment">Updates the UI based on navigation state</p>
+					<p class="fragment">Adds/removes current component from DOM. Great for SPAs</p>
+					<p class="fragment">Keeps URL in sync. Deep linking at any point.</p>
+					<pre class="fragment"><code class="hljs">
+<Route path="/" component={App}>
+  <Route path="contact" component={ContactPage} /></Route>
+  <Route path="about" component={AboutPage} /></Route>
+  <Route path="list" component={ListPage} />
+  	<Route path="detail/:id" component={DetailComponent} /></Route>
+  </Route>
+</Route>						
+					</code></pre>
+				</section>
+				<section>
+					<h3>Isomorphic Javascript</h3>
+					<p class="fragment"><small><em>Fancy term for one codebase rendered both on server and client</em></small></p>
+					<p class="fragment">Serve HTML instead of blank page</p>
+					<p class="fragment">Faster pagelaod performance</p>
+					<p class="fragment">Improve SEO</p>
+				</section>
+				<section>
+					<h3>NodeJS Server</h3>
+					<p class="fragment"><small><em>Javascripts on your server?!?!1</em></small></p>
+					<p class="fragment">ExpressJS setup in <code>server.js</code></p>
+					<p class="fragment">Re-uses same routes and codebase as client-side</p>
+					<p class="fragment">Uses <a href="https://github.com/goatslacker/iso" target="_blank">Iso</a>, a helper library from the author of Alt, to aid in passing down React State</p>
+					<p class="fragment">Pre-compile React Components that are seamlessly re-hydraded on front-end</p>
+				</section>
+				<section>
+					<h3>Build Process</h3>
+					<p class="fragment"><small><em>Automate all the things!</em></small></p>
+					<ol>
+						<li class="fragment">Gulp: CLI build tool</li>
+						<li class="fragment">Sass: CSS preprocessor</li>
+						<li class="fragment">Browserify: JS compiler, bundler, and depency manager</li>
+						<li class="fragment">Babel: ES6 transpiler</li>
+						<li class="fragment">Nodemon: node server file watcher</li>
+						<li class="fragment">Livereload: gulp/node integration for browser refresh</li>
+					</ol>
+				</section>
+				<section>
+					<h3>Available now for you to clone, view, play, reverse-engineer, whatever.</h3>
+					<p><a href="https://bitbucket.org/cnstudiotech/react-bootstrap" target="_blank">https://bitbucket.org/cnstudiotech/react-bootstrap</a></p>
+				</section>
+				<!-- End Sections -->
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
